@@ -1,0 +1,29 @@
+<%- include('partials/header') %>
+
+<section class="section-head">
+  <h1><%= t('orders.title') %></h1>
+</section>
+
+<% if (!orders.length) { %>
+<p><%= t('orders.empty') %> <a href="/products"><%= t('cart.start_shop') %></a>.</p>
+<% } else { %>
+<div class="orders-wrap">
+  <% orders.forEach(order => { %>
+  <article class="order-card">
+    <div class="order-head">
+      <h3>Order #<%= order.id %></h3>
+      <span><%= order.created_at %></span>
+    </div>
+    <p><%= t('orders.status') %>: <strong><%= order.status %></strong></p>
+    <p><%= t('orders.total') %>: <strong><%= vnd(order.total_amount) %></strong></p>
+    <ul>
+      <% order.items.forEach(item => { %>
+      <li><%= item.name %> × <%= item.quantity %> — <%= vnd(item.price_at_purchase * item.quantity) %></li>
+      <% }) %>
+    </ul>
+  </article>
+  <% }) %>
+</div>
+<% } %>
+
+<%- include('partials/footer') %>

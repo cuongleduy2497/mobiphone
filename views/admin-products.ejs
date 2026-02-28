@@ -1,0 +1,38 @@
+<%- include('partials/header') %>
+
+<section class="section-head">
+  <h1><%= t('admin.products') %></h1>
+  <a class="btn btn-sm" href="/admin/products/new"><%= t('admin.new_product') %></a>
+</section>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th><%= t('admin.name') %></th>
+      <th><%= t('admin.category') %></th>
+      <th><%= t('cart.price') %></th>
+      <th><%= t('admin.stock') %></th>
+      <th><%= t('admin.actions') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% products.forEach(p => { %>
+    <tr>
+      <td><%= p.id %></td>
+      <td><%= p.name %></td>
+      <td><%= p.category === 'Phone' ? t('category.phone') : t('category.accessory') %></td>
+      <td><%= vnd(p.price) %></td>
+      <td><%= p.stock %></td>
+      <td>
+        <a href="/admin/products/<%= p.id %>/edit"><%= t('admin.edit') %></a>
+        <form method="post" action="/admin/products/<%= p.id %>/delete" class="inline-form">
+          <button class="danger" type="submit"><%= t('admin.delete') %></button>
+        </form>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<%- include('partials/footer') %>

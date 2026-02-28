@@ -1,0 +1,24 @@
+<%- include('partials/header') %>
+
+<div class="detail-wrap">
+  <img src="<%= product.image_url %>" alt="<%= product.name %>" class="detail-img" />
+  <div>
+    <h1><%= product.name %></h1>
+    <p class="muted"><%= product.category === 'Phone' ? t('category.phone') : t('category.accessory') %></p>
+    <div class="rich-content"><%- product.description %></div>
+    <p class="price big"><%= vnd(product.price) %></p>
+    <p><%= t('product.stock') %>: <strong><%= product.stock %></strong></p>
+
+    <% if (product.stock > 0) { %>
+    <form action="/cart/add" method="post" class="row-form">
+      <input type="hidden" name="product_id" value="<%= product.id %>" />
+      <input type="number" name="quantity" min="1" max="<%= product.stock %>" value="1" />
+      <button class="btn" type="submit"><%= t('product.add_to_cart') %></button>
+    </form>
+    <% } else { %>
+    <p class="flash flash-error"><%= t('product.out_of_stock') %></p>
+    <% } %>
+  </div>
+</div>
+
+<%- include('partials/footer') %>

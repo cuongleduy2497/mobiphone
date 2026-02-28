@@ -1,0 +1,60 @@
+# PhoneStore Ecommerce Website
+
+A complete ecommerce website for selling phones and related devices/accessories.
+
+## Features
+
+- Customer registration/login/logout
+- Product catalog (phones + accessories)
+- Search and category filter
+- Product detail page
+- Shopping cart (add/update/remove)
+- Checkout flow with shipping info
+- Order placement and history
+- Stock management during checkout
+- Admin product management (create/edit/delete)
+
+## Tech Stack
+
+- Node.js + Express
+- EJS templates
+- Firebase Firestore (firebase-admin)
+- Session auth (express-session)
+
+## Run locally
+
+1. Create Firebase project and Firestore database
+
+   - Open Firebase Console
+   - Create project
+   - Enable Firestore (Production or Test mode)
+   - Create Service Account key (JSON)
+
+2. Set environment variables
+
+   - `SESSION_SECRET=your_secret`
+   - `FIREBASE_SERVICE_ACCOUNT_JSON={...full service account json...}`
+
+   PowerShell example:
+
+   `$env:SESSION_SECRET="your_secret"`
+   `$env:FIREBASE_SERVICE_ACCOUNT_JSON=Get-Content .\serviceAccount.json -Raw`
+
+3. Install dependencies
+
+   npm install
+
+4. Start server
+
+   npm start
+
+5. Open browser
+
+   http://localhost:3000
+
+## Default Admin Account
+
+- Email: admin@phonestore.com
+- Password: admin123
+
+You can login with this account to manage products at `/admin/products`.

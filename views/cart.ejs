@@ -1,0 +1,50 @@
+<%- include('partials/header') %>
+
+<section class="section-head">
+  <h1><%= t('cart.title') %></h1>
+</section>
+
+<% if (!items.length) { %>
+<p><%= t('cart.empty') %> <a href="/products"><%= t('cart.start_shop') %></a>.</p>
+<% } else { %>
+<table class="table">
+  <thead>
+    <tr>
+      <th><%= t('cart.product') %></th>
+      <th><%= t('cart.price') %></th>
+      <th><%= t('cart.quantity') %></th>
+      <th><%= t('cart.subtotal') %></th>
+      <th><%= t('cart.action') %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% items.forEach(item => { %>
+    <tr>
+      <td><%= item.name %></td>
+      <td><%= vnd(item.price) %></td>
+      <td>
+        <form action="/cart/update" method="post" class="row-form">
+          <input type="hidden" name="product_id" value="<%= item.product_id %>" />
+          <input type="number" name="quantity" min="0" max="<%= item.stock %>" value="<%= item.quantity %>" />
+          <button class="btn btn-sm" type="submit"><%= t('cart.update') %></button>
+        </form>
+      </td>
+      <td><%= vnd(item.price * item.quantity) %></td>
+      <td>
+        <form action="/cart/remove" method="post">
+          <input type="hidden" name="product_id" value="<%= item.product_id %>" />
+          <button class="danger" type="submit"><%= t('cart.remove') %></button>
+        </form>
+      </td>
+    </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<div class="checkout-box">
+  <h3><%= t('cart.total') %>: <%= vnd(total) %></h3>
+  <a class="btn" href="/checkout"><%= t('cart.checkout') %></a>
+</div>
+<% } %>
+
+<%- include('partials/footer') %>

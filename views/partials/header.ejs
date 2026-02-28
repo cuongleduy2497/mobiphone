@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="<%= lang %>">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Phone Store</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="container topbar-main">
+        <a class="logo" href="/">PhoneStore</a>
+
+        <form class="top-search" action="/products" method="get">
+          <input type="text" name="q" placeholder="Bạn tìm gì hôm nay..." />
+          <button type="submit">Tìm</button>
+        </form>
+
+        <nav class="nav-links">
+          <% if (lang === 'vi') { %>
+          <a class="lang-btn" href="/language/en">🇺🇸</a>
+          <% } else { %>
+          <a class="lang-btn" href="/language/vi">🇻🇳</a>
+          <% } %>
+
+          <% if (currentUser) { %>
+          <a href="/orders">Đơn hàng</a>
+          <a href="/cart">Giỏ hàng (<%= cartCount %>)</a>
+          <% if (currentUser.is_admin) { %>
+          <a href="/admin/products">Admin</a>
+          <% } %>
+          <form action="/logout" method="post" class="inline-form">
+            <button class="link-btn" type="submit">Đăng xuất</button>
+          </form>
+          <% } else { %>
+          <a href="/login">Đăng nhập</a>
+          <a href="/register" class="btn btn-sm">Đăng ký</a>
+          <% } %>
+        </nav>
+      </div>
+
+    </header>
+
+    <main class="container">
+      <% if (flash) { %>
+      <div class="flash <%= flash.type === 'success' ? 'flash-success' : 'flash-error' %>">
+        <%= flash.message %>
+      </div>
+      <% } %>

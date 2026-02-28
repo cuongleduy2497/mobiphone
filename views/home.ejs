@@ -1,0 +1,37 @@
+<%- include('partials/header') %>
+
+<section class="promo-wrap">
+  <h2>Khuyến mãi online</h2>
+
+  <div class="promo-tabs">
+    <span class="active">FLASH SALE</span>
+    <span>Giảm đến 50%</span>
+    <span>Điện thoại</span>
+    <span>Apple</span>
+    <span>Laptop</span>
+    <span>Phụ kiện</span>
+    <span>Đồng hồ</span>
+  </div>
+
+  <div class="countdown-strip">
+    <div class="count-main">Chỉ còn: <strong>01 : 43 : 15</strong></div>
+    <div>Sắp diễn ra<br />18:00</div>
+    <div>Sắp diễn ra<br />21:30</div>
+    <div>Ngày mai<br />00:00</div>
+    <div>Ngày mai<br />09:00</div>
+  </div>
+
+  <div class="grid cards-3">
+    <% featured.forEach(p => { %>
+    <article class="card">
+      <img src="<%= p.image_url %>" alt="<%= p.name %>" class="product-img" />
+      <h3><%= p.name %></h3>
+      <p class="muted"><%= p.category === 'Phone' ? t('category.phone') : t('category.accessory') %></p>
+      <p class="price"><%= vnd(p.price) %></p>
+      <a class="btn btn-sm" href="/products/<%= p.id %>">Xem chi tiết</a>
+    </article>
+    <% }) %>
+  </div>
+</section>
+
+<%- include('partials/footer') %>

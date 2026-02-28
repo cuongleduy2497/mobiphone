@@ -1,0 +1,54 @@
+<%- include('partials/header') %>
+
+<section class="section-head">
+  <h1><%= t('products.title') %></h1>
+</section>
+
+<form class="filter-bar" method="get" action="/products">
+  <input type="text" name="q" placeholder="<%= t('products.search_placeholder') %>" value="<%= q %>" />
+  <select name="category">
+    <option value=""><%= t('products.all_categories') %></option>
+    <option value="Phone" <%= category === 'Phone' ? 'selected' : '' %>><%= t('category.phone') %></option>
+    <option value="Accessory" <%= category === 'Accessory' ? 'selected' : '' %>><%= t('category.accessory') %></option>
+  </select>
+  <button class="btn btn-sm" type="submit"><%= t('products.filter') %></button>
+</form>
+
+<div class="grid cards-3 product-search-grid">
+  <% if (!products.length) { %>
+  <p><%= t('products.empty') %></p>
+  <% } %>
+
+  <% products.forEach(p => { %>
+  <article class="card product-search-card" data-url="/products/<%= p.id %>">
+    <img src="<%= p.image_url %>" alt="<%= p.name %>" class="product-img" />
+    <h3><%= p.name %></h3>
+    <p class="muted"><%= p.category === 'Phone' ? t('category.phone') : t('category.accessory') %></p>
+    <p class="price"><%= vnd(p.price) %></p>
+    <% if (currentUser && p.stock > 0) { %>
+    <form action="/cart/add" method="post" class="row-form">
+      <input type="hidden" name="product_id" value="<%= p.id %>" />
+      <input type="hidden" name="quantity" value="1" />
+      <button class="btn btn-sm" type="submit"><%= t('product.add_to_cart') %></button>
+    </form>
+    <% } else if (!currentUser) { %>
+    <a class="btn btn-sm" href="/login"><%= t('nav.login') %></a>
+    <% } else { %>
+    <button class="btn btn-sm" type="button" disabled><%= t('product.out_of_stock') %></button>
+    <% } %>
+  </article>
+  <% }) %>
+</div>
+
+<script>
+  document.querySelectorAll('.product-search-card[data-url]').forEach((card) => {
+    card.addEventListener('click', (event) => {
+      if (event.target.closest('a, button, form, input, select, textarea, label')) {
+        return;
+      }
+      window.location.href = card.dataset.url;
+    });
+  });
+</script>
+
+<%- include('partials/footer') %>

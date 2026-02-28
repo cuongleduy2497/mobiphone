@@ -1,0 +1,16 @@
+<%- include('partials/header') %>
+
+<section class="auth-box">
+  <h1><%= t('auth.create_account') %></h1>
+  <form method="post" action="/register" class="form-col">
+    <label><%= t('auth.full_name') %></label>
+    <input type="text" name="name" required />
+    <label><%= t('auth.email') %></label>
+    <input type="email" name="email" required />
+    <label><%= t('auth.password_hint') %></label>
+    <input type="password" name="password" minlength="6" required />
+    <button class="btn" type="submit"><%= t('nav.register') %></button>
+  </form>
+</section>
+
+<%- include('partials/footer') %>

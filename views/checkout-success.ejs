@@ -1,0 +1,10 @@
+<%- include('partials/header') %>
+
+<section class="auth-box">
+  <h1><%= t('checkout.success_title') %></h1>
+  <p><%= t('checkout.success_id') %> <strong>#<%= orderId %></strong>.</p>
+  <p><%= t('checkout.success_note') %></p>
+  <a class="btn" href="/orders"><%= t('checkout.view_orders') %></a>
+</section>
+
+<%- include('partials/footer') %>

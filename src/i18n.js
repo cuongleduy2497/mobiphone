@@ -1,0 +1,197 @@
+const translations = {
+  vi: {
+    'nav.shop': 'Cửa hàng',
+    'nav.orders': 'Đơn hàng',
+    'nav.cart': 'Giỏ hàng',
+    'nav.admin': 'Quản trị',
+    'nav.logout': 'Đăng xuất',
+    'nav.login': 'Đăng nhập',
+    'nav.register': 'Đăng ký',
+    'lang.to_vi': '🇻🇳 Tiếng Việt',
+    'lang.to_en': '🇺🇸 English',
+
+    'home.title': 'Mua điện thoại & phụ kiện uy tín',
+    'home.subtitle': 'Giá tốt, chất lượng đảm bảo, giao hàng nhanh.',
+    'home.start': 'Mua ngay',
+    'home.featured': 'Sản phẩm nổi bật',
+    'home.view_all': 'Xem tất cả',
+    'home.detail': 'Xem chi tiết',
+
+    'products.title': 'Mua sắm sản phẩm',
+    'products.search_placeholder': 'Tìm điện thoại hoặc phụ kiện...',
+    'products.all_categories': 'Tất cả danh mục',
+    'products.filter': 'Lọc',
+    'products.empty': 'Không tìm thấy sản phẩm.',
+
+    'product.stock': 'Tồn kho',
+    'product.add_to_cart': 'Thêm vào giỏ',
+    'product.out_of_stock': 'Hết hàng',
+
+    'auth.login': 'Đăng nhập',
+    'auth.email': 'Email',
+    'auth.password': 'Mật khẩu',
+    'auth.create_account': 'Tạo tài khoản',
+    'auth.full_name': 'Họ và tên',
+    'auth.password_hint': 'Mật khẩu (ít nhất 6 ký tự)',
+
+    'cart.title': 'Giỏ hàng của bạn',
+    'cart.empty': 'Giỏ hàng đang trống.',
+    'cart.start_shop': 'Mua sắm ngay',
+    'cart.product': 'Sản phẩm',
+    'cart.price': 'Giá',
+    'cart.quantity': 'Số lượng',
+    'cart.subtotal': 'Tạm tính',
+    'cart.action': 'Thao tác',
+    'cart.update': 'Cập nhật',
+    'cart.remove': 'Xóa',
+    'cart.total': 'Tổng cộng',
+    'cart.checkout': 'Tiến hành thanh toán',
+
+    'checkout.title': 'Thanh toán',
+    'checkout.shipping_info': 'Thông tin giao hàng',
+    'checkout.full_name': 'Họ và tên',
+    'checkout.phone': 'Số điện thoại',
+    'checkout.address': 'Địa chỉ',
+    'checkout.place_order': 'Đặt hàng',
+    'checkout.summary': 'Tóm tắt đơn hàng',
+
+    'checkout.success_title': 'Đặt hàng thành công 🎉',
+    'checkout.success_id': 'Mã đơn hàng của bạn là',
+    'checkout.success_note': 'Chúng tôi sẽ liên hệ sớm để xác nhận và giao hàng.',
+    'checkout.view_orders': 'Xem đơn hàng',
+
+    'orders.title': 'Đơn hàng của tôi',
+    'orders.empty': 'Bạn chưa có đơn hàng nào.',
+    'orders.status': 'Trạng thái',
+    'orders.total': 'Tổng tiền',
+
+    'admin.products': 'Quản trị · Sản phẩm',
+    'admin.new_product': '+ Sản phẩm mới',
+    'admin.actions': 'Thao tác',
+    'admin.edit': 'Sửa',
+    'admin.delete': 'Xóa',
+    'admin.edit_product': 'Chỉnh sửa sản phẩm',
+    'admin.create_product': 'Tạo sản phẩm',
+    'admin.name': 'Tên sản phẩm',
+    'admin.description': 'Mô tả',
+    'admin.category': 'Danh mục',
+    'admin.price': 'Giá (VND)',
+    'admin.stock': 'Tồn kho',
+    'admin.image_url': 'URL hình ảnh',
+    'admin.image_placeholder': 'https://... (không bắt buộc nếu tải file)',
+    'admin.upload_image': 'Hoặc tải ảnh từ máy',
+    'admin.current_image': 'Ảnh hiện tại',
+    'admin.update_product': 'Cập nhật sản phẩm',
+    'admin.create_product_btn': 'Tạo sản phẩm',
+
+    'category.phone': 'Điện thoại',
+    'category.accessory': 'Phụ kiện',
+
+    'notfound.title': '404 - Không tìm thấy trang',
+    'notfound.desc': 'Trang bạn đang tìm kiếm không tồn tại.',
+    'notfound.home': 'Về trang chủ',
+
+    'footer.rights': 'PhoneStore. Bảo lưu mọi quyền.'
+  },
+  en: {
+    'nav.shop': 'Shop',
+    'nav.orders': 'My Orders',
+    'nav.cart': 'Cart',
+    'nav.admin': 'Admin',
+    'nav.logout': 'Logout',
+    'nav.login': 'Login',
+    'nav.register': 'Register',
+    'lang.to_vi': '🇻🇳 Tiếng Việt',
+    'lang.to_en': '🇺🇸 English',
+
+    'home.title': 'Buy Phones & Accessories with Confidence',
+    'home.subtitle': 'Best prices, trusted quality, and fast delivery.',
+    'home.start': 'Start Shopping',
+    'home.featured': 'Featured Products',
+    'home.view_all': 'View all',
+    'home.detail': 'View Details',
+
+    'products.title': 'Shop Products',
+    'products.search_placeholder': 'Search phones or accessories...',
+    'products.all_categories': 'All Categories',
+    'products.filter': 'Filter',
+    'products.empty': 'No products found.',
+
+    'product.stock': 'Stock',
+    'product.add_to_cart': 'Add to Cart',
+    'product.out_of_stock': 'Out of stock',
+
+    'auth.login': 'Login',
+    'auth.email': 'Email',
+    'auth.password': 'Password',
+    'auth.create_account': 'Create Account',
+    'auth.full_name': 'Full Name',
+    'auth.password_hint': 'Password (min 6 chars)',
+
+    'cart.title': 'Your Cart',
+    'cart.empty': 'Your cart is empty.',
+    'cart.start_shop': 'Start shopping',
+    'cart.product': 'Product',
+    'cart.price': 'Price',
+    'cart.quantity': 'Quantity',
+    'cart.subtotal': 'Subtotal',
+    'cart.action': 'Action',
+    'cart.update': 'Update',
+    'cart.remove': 'Remove',
+    'cart.total': 'Total',
+    'cart.checkout': 'Proceed to Checkout',
+
+    'checkout.title': 'Checkout',
+    'checkout.shipping_info': 'Shipping Information',
+    'checkout.full_name': 'Full Name',
+    'checkout.phone': 'Phone Number',
+    'checkout.address': 'Address',
+    'checkout.place_order': 'Place Order',
+    'checkout.summary': 'Order Summary',
+
+    'checkout.success_title': 'Order Placed Successfully 🎉',
+    'checkout.success_id': 'Your order ID is',
+    'checkout.success_note': 'We will contact you soon for confirmation and delivery.',
+    'checkout.view_orders': 'View My Orders',
+
+    'orders.title': 'My Orders',
+    'orders.empty': 'No orders yet.',
+    'orders.status': 'Status',
+    'orders.total': 'Total',
+
+    'admin.products': 'Admin · Products',
+    'admin.new_product': '+ New Product',
+    'admin.actions': 'Actions',
+    'admin.edit': 'Edit',
+    'admin.delete': 'Delete',
+    'admin.edit_product': 'Edit Product',
+    'admin.create_product': 'Create Product',
+    'admin.name': 'Name',
+    'admin.description': 'Description',
+    'admin.category': 'Category',
+    'admin.price': 'Price (VND)',
+    'admin.stock': 'Stock',
+    'admin.image_url': 'Image URL',
+    'admin.image_placeholder': 'https://... (optional if uploading file)',
+    'admin.upload_image': 'Or Upload Image From Your Machine',
+    'admin.current_image': 'Current image',
+    'admin.update_product': 'Update Product',
+    'admin.create_product_btn': 'Create Product',
+
+    'category.phone': 'Phone',
+    'category.accessory': 'Accessory',
+
+    'notfound.title': '404 - Page Not Found',
+    'notfound.desc': 'The page you are looking for does not exist.',
+    'notfound.home': 'Go Home',
+
+    'footer.rights': 'PhoneStore. All rights reserved.'
+  }
+};
+
+function t(lang, key) {
+  const selected = translations[lang] || translations.vi;
+  return selected[key] || translations.vi[key] || key;
+}
+
+module.exports = { t };
